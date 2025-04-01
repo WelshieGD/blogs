@@ -31,7 +31,7 @@ Try {
 
     catch {
             $State = "OverThreshold"
-            $FileCount = "Unknown - Path not available"
+            $FileCount = "Unknown - Path not available or monitoring doesn't have permissions on the shared folder."
     }
        
     finally  {
