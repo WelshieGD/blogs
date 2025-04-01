@@ -18,7 +18,7 @@ $whoami = whoami.exe
 
 Try {
     If (Test-Path $RemoteFolderPath) {
-        $FileCount = (Get-ChildItem $RemoteFolderPath -PathType Leaf | Measure-Object).Count
+        $FileCount = (Get-ChildItem $RemoteFolderPath -File | Measure-Object).Count
         if ($FileCount -lt $Threshold) {
             $State = "UnderThreshold"
             }
@@ -37,7 +37,7 @@ Try {
     finally  {
     # Properties of our alert
 
-    $ScomAPI.LogScriptEvent("RemoteFolderCheck.ps1",9999,2,"Check Folder Test = " + $CheckFolder + ", Remote Folder Path = " + $RemoteFolderPath + ", State = " + $State + ", FileCount = " + $FileCount + ", Threshold = " + $Threshold)
+    $ScomAPI.LogScriptEvent("RemoteFolderCheck.ps1",9999,2,"Run As" + $whoami + ", Remote Folder Path = " + $RemoteFolderPath + ", State = " + $State + ", FileCount = " + $FileCount + ", Threshold = " + $Threshold)
 
     $PropertyBag.AddValue("FileCount",$FileCount)
     $PropertyBag.AddValue("Threshold",$Threshold)
