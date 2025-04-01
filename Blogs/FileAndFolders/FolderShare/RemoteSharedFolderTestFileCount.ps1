@@ -14,7 +14,11 @@ $whoami = whoami.exe
 # Original One liner
 # Test-Path \\SCOM-MS2\ImageStore
 
-
+#####
+#
+# This script needs permissions set on Everyone = Read on the share otherwise it will return a file count of 0. Test-Path will validate that the share exists but won't have permissions to count files (but won't error)
+#
+######
 
 Try {
     If (Test-Path $RemoteFolderPath) {
