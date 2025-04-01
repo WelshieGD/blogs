@@ -37,7 +37,7 @@ Try {
     finally  {
     # Properties of our alert
 
-    $ScomAPI.LogScriptEvent("RemoteFolderCheck.ps1",9999,2,"Run As" + $whoami + ", Remote Folder Path = " + $RemoteFolderPath + ", State = " + $State + ", FileCount = " + $FileCount + ", Threshold = " + $Threshold)
+    $ScomAPI.LogScriptEvent("RemoteFolderCheck.ps1",9999,2,"Run As = " + $whoami + ", Remote Folder Path = " + $RemoteFolderPath + ", State = " + $State + ", FileCount = " + $FileCount + ", Threshold = " + $Threshold)
 
     $PropertyBag.AddValue("FileCount",$FileCount)
     $PropertyBag.AddValue("Threshold",$Threshold)
